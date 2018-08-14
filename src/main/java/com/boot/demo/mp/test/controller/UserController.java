@@ -1,6 +1,7 @@
 package com.boot.demo.mp.test.controller;
 
 import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.baomidou.mybatisplus.plugins.Page;
 import com.boot.demo.controller.BaseController;
 import com.boot.demo.mp.test.entity.RootUser;
 import com.boot.demo.mp.test.mapper.RootUserMapper;
@@ -18,6 +19,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/rest/user")
+@SuppressWarnings("ALL")
 public class UserController extends BaseController {
     @Resource
     RootUserMapper rootUserMapper;
@@ -30,6 +32,14 @@ public class UserController extends BaseController {
                 return "";
             }
         });
+        return successObject(rootUsers);
+    }
+
+    @GetMapping("/getByPage")
+    public ResponseEntity getUserByPage(){
+        Page<RootUser> page = new Page<>(1,2);
+        List<RootUser> rootUsers = rootUserMapper.selectPage(page,null);
+        page.setRecords(rootUsers);
         return successObject(rootUsers);
     }
 }

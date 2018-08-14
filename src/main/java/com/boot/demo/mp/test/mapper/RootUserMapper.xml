@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.boot.demo.mp.test.entity.RootUser" id="BaseResultMap">
+        <id property="id" column="id"/>
+        <result property="created" column="created"/>
+        <result property="deleted" column="deleted"/>
+        <result property="updated" column="updated"/>
+        <result property="version" column="version"/>
+        <result property="refId" column="refId"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="salt" column="salt"/>
+        <result property="name" column="name"/>
+        <result property="idCardNo" column="idCardNo"/>
+    </resultMap>
+</mapper>

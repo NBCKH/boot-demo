@@ -41,6 +41,12 @@
     </properties>
 
     <dependencies>
+        <!-- java工具类guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>27.1-jre</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
